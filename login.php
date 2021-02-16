@@ -1,6 +1,3 @@
-<?php
-include 'connection.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -32,7 +29,7 @@ include 'connection.php';
                         </tr>
                         <tr>
                             <td class="login_td">Pass ID </td> 
-                            <td class="login_td"><input class="login_input" type="number" name="passid" ></td>
+                            <td class="login_td"><input class="login_input" type="text" name="passid" ></td>
                         </tr>
                         <tr>
                             <th colspan=2><input class="login_input_submit" type="submit" name="submit" value="SUBMIT"></th>
@@ -43,11 +40,32 @@ include 'connection.php';
         </div>
     
         <?php
-        if(isset($_POST['sub'])){
+        include ("connection.php");
+
+        if(isset($_POST['submit'])){
+
             $user = $_POST['user'];
-            $password = $_POST['password']
+            $password = $_POST['password'];
             $passcode = $_POST['passid'];
-            $chk_login=mysql_query("select * from user_login where uid='$un' and pwd='$pas'");
+            $check_login_query="select * from user_login where user_id='$user' and user_password='$password' and user_passid='$passcode'";
+            $result = mysqli_query($con,$check_login_query);
+            $login_rows = mysqli_fetch_row($result);
+            $count = mysqli_num_rows($result);
+
+            if($count>0){
+                if($login_rows[3]=="0110")
+                {
+                    header("location:admin\\home.php");
+                }
+                if($login_rows[3]=="1001")
+                {
+                    header("location:students\\home.php");
+                }
+            }
+            else{
+                echo '<script>alert("Authentication Failed Sorry !!");</script>';
+                //header("location:login.php?error=1");
+            }
         }
         ?>
 
