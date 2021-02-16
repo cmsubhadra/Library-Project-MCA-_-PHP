@@ -13,14 +13,21 @@
 <body>
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="#">Add Book</a>
-		<a href="#">Add Student</a>
-		<a href="#">Search Book</a>
-		<a href="#">Logout</a>
+		<img src="library/images/admin_logo.jpg" class="admin-logo">
+		<h3 class="admin">Admin</h3>
+		<a href="add_book.php" class="admin-items one-top" target="content">Add Book</a>
+		<a href="add_student.php" class="admin-items" target="content">Add Student</a>
+		<a href="#" class="admin-items">Search Book</a>
+		<a href="#" class="admin-items">Logout</a>
 	
 	</div>
 	<!-- Use any element to open the sidenav -->
 	<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+
+	<div class="contents">
+		<iframe name="content" class="contents"></iframe>
+	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="library/javascript.js"></script>
