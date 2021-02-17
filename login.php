@@ -40,6 +40,7 @@
         </div>
     
         <?php
+        session_start();
         include ("connection.php");
 
         if(isset($_POST['submit'])){
@@ -53,13 +54,19 @@
             $count = mysqli_num_rows($result);
 
             if($count>0){
+                $_SESSION["id"] = $login_rows[2];
+                $_SESSION["name"] = $login_rows[0];
                 if($login_rows[3]=="0110")
                 {
-                    header("location:admin\\home.php");
+                    if(isset($_SESSION["id"])) {
+                    header("location:admin\\index.php");
+                    }
                 }
                 if($login_rows[3]=="1001")
                 {
-                    header("location:students\\home.php");
+                    if(isset($_SESSION["id"])) {
+                    header("location:students\\index.php");
+                    }
                 }
             }
             else{

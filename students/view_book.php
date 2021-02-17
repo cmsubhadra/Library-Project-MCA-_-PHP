@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <html lang="en">
 <head>
     <link href="library/search.css" type="text/css" rel="stylesheet">
@@ -12,15 +13,9 @@ session_start();
 </head>
 <body>
 <div class="text-center search-div">
-        <h5 class="search-here">Search here</h5>
+<h5 class="search-here">Search here</h5>
     </div>
 <input type="text" name="search" id="myInput" onkeyup="myFunction()" placeholder="Search.." class="search-bar">
-
-<script src="library/search.js"></script>
-
-</body>
-</html>
-
 <?php
     $con = Mysqli_Connect("localhost","root","","library_management");
     if(!$con){
@@ -57,3 +52,8 @@ session_start();
     }
 
 ?>
+<script src="library/search.js"></script>
+
+</body>
+</html>
+
