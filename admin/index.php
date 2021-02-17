@@ -17,7 +17,8 @@
 		<h3 class="admin">Admin</h3>
 		<a href="add_book.php" class="admin-items one-top" target="content">Add Book</a>
 		<a href="add_student.php" class="admin-items" target="content">Add Student</a>
-		<a href="#" class="admin-items">Search Book</a>
+		<a href="view_student.php" class="admin-items" target="content">View Student</a>
+		<a href="view_book.php" class="admin-items" target="content">Search Book</a>
 		<a href="#" class="admin-items">Logout</a>
 	
 	</div>

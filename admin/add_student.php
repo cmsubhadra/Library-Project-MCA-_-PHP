@@ -29,7 +29,7 @@
     }
 </style>
 <body>
-    <h2>FORM VALIDATION</h2>
+    <h2>ADD STUDENT</h2>
     <form name="form" action="#" method="POST">
         <table>
             <tr>
@@ -52,13 +52,17 @@
                 <th>Password </th>
                 <td><input type="password" name="password"> </td>
             </tr>
+            <tr>
+                <th>PassID </th>
+                <td><input type="password" name="passid"> </td>
+            </tr>
             <tr class="center">
                 <th colspan="2"><input type="submit" value="submit" name="submit"></th>
             </tr>
         </table>
     </form>
 <?php
-    $con = Mysqli_Connect("localhost","root","","jobin");
+    $con = Mysqli_Connect("localhost","root","","library_management");
     if(!$con){
         echo "Connection error !";
     }
@@ -69,9 +73,17 @@
         $mobile = $_POST['mob'];  
         $user = $_POST['user'];  
         $password = $_POST['password'];
+        $passid = $_POST['passid'];
 
-            $query = "insert into form values('$name','$email','$mobile','$password','$user')";
+            $query = "insert into user_details values('$name','$email','$mobile','$user')";
             if(mysqli_query($con,$query)){
+                echo "success";
+            }
+            else{
+                echo "error".$query.mysqli_error($con);
+            }
+            $query_acc = "insert into user_login values('$user','$password','$passid','1001')";
+            if(mysqli_query($con,$query_acc)){
                 echo "success";
             }
             else{
