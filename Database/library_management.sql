@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2021 at 06:18 AM
+-- Generation Time: Mar 04, 2021 at 08:58 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -47,6 +47,21 @@ INSERT INTO `book_details` (`book_id`, `book_name`, `book_author`, `book_edition
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_approve`
+--
+
+CREATE TABLE `user_approve` (
+  `name` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `mobile` varchar(11) NOT NULL,
+  `user` varchar(20) NOT NULL,
+  `pwd` varchar(20) NOT NULL,
+  `pid` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_details`
 --
 
@@ -62,7 +77,14 @@ CREATE TABLE `user_details` (
 --
 
 INSERT INTO `user_details` (`name`, `email`, `mobile`, `user`) VALUES
-('hacker', 'hacker@gmail.com', '1234567890', 'hacker');
+('', '', '', ''),
+('sdsd', 'jobinjofficial@gmail', 'er', 'admin3'),
+('fgh', 'jobinjofficial@gmail', 'er', 'admin5'),
+('jhj', 'jobinjofficial@gmail', '1111111', 'admin6'),
+('fgh', 'jobinjofficial@gmail', 'admin1', 'fgh'),
+('fghd', 'jobinjofficial@gmail', 'admin2', 'fghd'),
+('hacker', 'hacker@gmail.com', '1234567890', 'hacker'),
+('sdsd', 'jobinjofficial@gmail', 'admin3', 'sdsd');
 
 -- --------------------------------------------------------
 
@@ -82,13 +104,26 @@ CREATE TABLE `user_login` (
 --
 
 INSERT INTO `user_login` (`user_id`, `user_password`, `user_passid`, `user_athorization`) VALUES
+('', '', '', '1001'),
 ('admin', 'admin', 'admin', '0110'),
+('admin3', 'admin', 'sd', '1001'),
+('admin5', 'admin', 'd', '1001'),
+('admin6', 'admin', 'g', '1001'),
+('fgh', 'admin', 'd', '1001'),
+('fghd', 'admin', '123', '1001'),
 ('hacker', 'hacker', 'hacker', '1001'),
-('jobin', 'jobin', 'jobin', '1001');
+('jobin', 'jobin', 'jobin', '1001'),
+('sdsd', 'admin', 'sd', '1001');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `user_approve`
+--
+ALTER TABLE `user_approve`
+  ADD PRIMARY KEY (`user`);
 
 --
 -- Indexes for table `user_details`

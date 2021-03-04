@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
 <html lang="en">
 
@@ -63,6 +60,9 @@ session_start();
             <tr class="center">
                 <th colspan="2"><input type="submit" value="submit" name="submit"></th>
             </tr>
+            <tr class="center">
+                <th colspan="2"><a href="login.php" style="color:red;text-decoration:none;">Login instead ? </a></th>
+            </tr>
         </table>
     </form>
 <?php
@@ -79,19 +79,27 @@ session_start();
         $password = $_POST['password'];
         $passid = $_POST['passid'];
 
-            $query = "insert into user_details values('$name','$email','$mobile','$user')";
-            if(mysqli_query($con,$query)){
-                echo "success";
+            $query = "insert into user_approve values('$name','$email','$mobile','$user','$password','$passid')";
+
+            $check_login_query="select * from user_login where user_id='$user'";
+            $result = mysqli_query($con,$check_login_query);
+            $count = mysqli_num_rows($result);
+
+            $check_login_query_a="select * from user_approve where user='$user'";
+            $result_a = mysqli_query($con,$check_login_query_a);
+            $count_a = mysqli_num_rows($result_a);
+
+            if($count <= 0 && $count_a <=0){
+                if(mysqli_query($con,$query)){
+                    echo "<script>alert('success');</script>";
+                }
+                else{
+                    echo "error".$query.mysqli_error($con);
+                }
             }
+
             else{
-                echo "error".$query.mysqli_error($con);
-            }
-            $query_acc = "insert into user_login values('$user','$password','$passid','1001')";
-            if(mysqli_query($con,$query_acc)){
-                echo "success";
-            }
-            else{
-                echo "error".$query.mysqli_error($con);
+                echo "<script>alert('Try another username !!!');</script>";
             }
     }
 ?>

@@ -20,6 +20,7 @@ session_start();
 		<h3 class="admin">Admin</h3>
 		<a href="add_book.php" class="admin-items one-top" target="content">Add Book</a>
 		<a href="add_student.php" class="admin-items" target="content">Add Student</a>
+		<a href="add_request.php" class="admin-items" target="content">Approve Request</a>
 		<a href="view_student.php" class="admin-items" target="content">View Student</a>
 		<a href="view_book.php" class="admin-items" target="content">Search Book</a>
 		<a href="logout.php" class="admin-items">Logout</a>
@@ -30,7 +31,9 @@ session_start();
 
 
 	<div class="contents">
-		<iframe name="content" class="contents"></iframe>
+		<iframe name="content" class="contents">
+				
+		</iframe>
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

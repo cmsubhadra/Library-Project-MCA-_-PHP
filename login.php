@@ -14,7 +14,7 @@
       
         <div class="login_div">
             <br>
-            <a class="login_a_login" >Login </a> 
+            <a class="login_a_login" >Login </a> || <a href="signup.php" class="login_a_login" style="color:red;">Sign Up </a> 
             <br><br>
             <form method="POST" action="#">
                 <table class="login_table" cellpadding=20 >
