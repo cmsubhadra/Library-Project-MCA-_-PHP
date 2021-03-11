@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2021 at 03:37 PM
+-- Generation Time: Mar 11, 2021 at 04:47 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -46,6 +46,52 @@ INSERT INTO `book_details` (`book_id`, `book_name`, `book_author`, `book_edition
 ('3', 'charithram', 'jobin', '3', 'vaiga', 0),
 ('4', 'hacking', 'hacker', '45', 'auto generated', 0),
 ('5', 'sathyam', 'njan', '34', 'kgf', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `book_issue`
+--
+
+CREATE TABLE `book_issue` (
+  `book_id` int(11) NOT NULL,
+  `user_name` varchar(20) NOT NULL,
+  `issue_date` varchar(20) NOT NULL,
+  `return_date` varchar(20) NOT NULL,
+  `status` int(11) NOT NULL,
+  `no` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `book_issue`
+--
+
+INSERT INTO `book_issue` (`book_id`, `user_name`, `issue_date`, `return_date`, `status`, `no`) VALUES
+(1, 'hacker', '1/1/1', '2/2/2', 0, 10),
+(4, 'hacker', '2/2/2', '4/4/4', 0, 11),
+(1, 'hacker', '3/3/3', '5/5/5', 0, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_approve`
+--
+
+CREATE TABLE `user_approve` (
+  `name` varchar(20) NOT NULL,
+  `email` varchar(20) NOT NULL,
+  `mobile` varchar(11) NOT NULL,
+  `user` varchar(20) NOT NULL,
+  `pwd` varchar(20) NOT NULL,
+  `pid` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_approve`
+--
+
+INSERT INTO `user_approve` (`name`, `email`, `mobile`, `user`, `pwd`, `pid`) VALUES
+('hnghjgh', 'jobinjofficial@gmail', '1111111111', 'dark', 'admin', '454');
 
 -- --------------------------------------------------------
 
@@ -113,6 +159,18 @@ ALTER TABLE `book_details`
   ADD PRIMARY KEY (`book_id`);
 
 --
+-- Indexes for table `book_issue`
+--
+ALTER TABLE `book_issue`
+  ADD PRIMARY KEY (`no`);
+
+--
+-- Indexes for table `user_approve`
+--
+ALTER TABLE `user_approve`
+  ADD PRIMARY KEY (`user`);
+
+--
 -- Indexes for table `user_details`
 --
 ALTER TABLE `user_details`
@@ -123,6 +181,16 @@ ALTER TABLE `user_details`
 --
 ALTER TABLE `user_login`
   ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `book_issue`
+--
+ALTER TABLE `book_issue`
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
