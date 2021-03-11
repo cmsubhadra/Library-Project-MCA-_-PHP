@@ -37,7 +37,7 @@ session_start();
     else{
         $query = "select * from book_details";
         $values = mysqli_query($con,$query);
-        echo '<table id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>ID</th><th>TITLE</th><th>AUTHOR NO</th><th>EDITION</th><th>PUBLISHER</th>';
+        echo '<table id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>ID</th><th>TITLE</th><th>AUTHOR NO</th><th>EDITION</th><th>PUBLISHER</th><th>AVAILABILITY</th>';
         if(mysqli_num_rows($values)){
             $i = 1;
                 while($row=mysqli_fetch_assoc($values)){
@@ -62,6 +62,15 @@ session_start();
                         echo '</td>';
                         echo '<td>';
                             echo $row["book_publisher"];
+                        echo '</td>';
+                        echo '<td>';
+                        if($row["book_status"] == 0){
+                            echo "<h4 style=\"color:green;\">Available</h4>";
+
+                        }
+                        else{
+                            echo "<h4 style=\"color:red;\">Not Available</h4>";
+                        }
                         echo '</td>';
                     echo '</tr>';
                     $i++;
