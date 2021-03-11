@@ -28,6 +28,18 @@
         background-color:black;
         color: white;
     }
+   body
+    {
+    height: 100%;
+    width:100%;
+    background: url(images/bg.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    
+    }
 </style>
 <body>
     <h2>ADD STUDENT</h2>
