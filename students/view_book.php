@@ -7,7 +7,16 @@ session_start();
     <link href="library/search.css" type="text/css" rel="stylesheet">
     <style>
     tr,td{
-        padding:1em;
+        padding:10px;
+    }
+    .odd{
+            background-color: lightgrey;
+        }
+    .even{
+            background-color: white;
+        }
+    th{
+        background-color:lightpink;
     }
     </style>
 </head>
@@ -24,10 +33,17 @@ session_start();
     else{
         $query = "select * from book_details";
         $values = mysqli_query($con,$query);
-        echo '<table border="1" id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>ID</th><th>TITLE</th><th>AUTHOR NO</th><th>EDITION</th><th>PUBLISHER</th>';
+        echo '<table id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>ID</th><th>TITLE</th><th>AUTHOR NO</th><th>EDITION</th><th>PUBLISHER</th>';
         if(mysqli_num_rows($values)){
+            $i = 1;
                 while($row=mysqli_fetch_assoc($values)){
-                    echo '<tr>';
+                    if($i % 2 != 0){
+                        $classes = "odd";
+                    }
+                    else{
+                        $classes = "even";
+                    }
+                    echo "<tr class=".$classes.">";
                         echo '<td>';
                             echo $row["book_id"];
                         echo '</td>';
@@ -44,6 +60,7 @@ session_start();
                             echo $row["book_publisher"];
                         echo '</td>';
                     echo '</tr>';
+                    $i++;
                 }
         }
         else{
