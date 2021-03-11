@@ -22,10 +22,7 @@
     .center th{
         text-align: center;
     }
-    h2{
-        text-align: center;
-        
-    }
+
    body
     {
     height: 100%;
@@ -44,7 +41,7 @@
     <form name="form" action="#" method="POST">
         <table>
             <tr>
-               <th colspan="2"><h2>ADD STUDENT</h2></th>
+               <th colspan="2" style="text-align:center;color:red">SIGN UP</th>
             </tr>
             <tr>
                 <th>Name</th>
