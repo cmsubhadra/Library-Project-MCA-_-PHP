@@ -1,6 +1,10 @@
 <?php
-session_start();
+  session_start();
+  if(!isset($_SESSION['username'])){
+	  header("location:../login.php");
+  }
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,7 +35,7 @@ session_start();
 
 
 	<div class="contents">
-		<iframe name="content" class="contents">
+		<iframe name="content" class="contents" src="home.php">
 				
 		</iframe>
 	</div>
