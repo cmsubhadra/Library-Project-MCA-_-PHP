@@ -13,16 +13,27 @@
 
 if(isset($_POST['update']))
 {
-   $no = $_POST['id'];
+   $no = $_GET['id'];
    //$no = 3;
-   
+   //echo "<script>alert(\"start !!\");</script>";
+
     $name=$_POST['name'];
     $bookid = $_POST['bookid'];
     $issue_date=$_POST['issue'];
     $return_date=$_POST['return_date'];
 
     //$query = "insert into book_issue (book_id,user_name,issue_date,status) values ($bookid,'$uname','$issuedate',1)";
-        $result = mysqli_query($con, "UPDATE book_issue SET return_date='$return_date',status='0' WHERE no=$no");
+        $result_issue = mysqli_query($con, "UPDATE book_issue SET return_date='$return_date',status='0' WHERE no=$no");
+        if(!$result_issue){
+            echo "<script>alert(\"Book issue problem !!\");</script>";
+            header("Location: return_book.php");
+        }
+        $result_book = mysqli_query($con, "UPDATE book_details SET book_status='0' WHERE book_id=$bookid");
+        if(!$result_book){
+            echo "<script>alert(\"Book Data not updated problem !!\");</script>";
+        }
+       
+        echo "<script>alert(\"Return Succesfully .. \");</script>";
         header("Location: return_book.php");
     
 }
@@ -40,7 +51,7 @@ while($res = mysqli_fetch_array($result)){
     $name= $res['user_name'];
     $bookid=$res['book_id'];
     $issue_date= $res['issue_date'];
-    $return_date= $res['return_date'];
+    $return_date_p= $res['return_date'];
 }
 ?>
 
@@ -104,7 +115,7 @@ while($res = mysqli_fetch_array($result)){
             </tr>
             <tr>
                 <td>Return Date</td>
-                <td><input type="text" name="return_date" value="<?php echo $return_date;?>"></td>
+                <td><input type="text" name="return_date" value="<?php echo $return_date_p;?>"></td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align:center;"><input style="padding:5px;border:none;background-color:red;color:white" type="submit" name="update" value="UPDATE"></td>

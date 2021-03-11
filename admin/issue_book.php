@@ -88,6 +88,13 @@
             $user_result = mysqli_query($con,$user_check);
             $user_count = mysqli_num_rows($user_result);
             
+
+            while($res = mysqli_fetch_array($book_result)){
+
+                $status= $res['book_status'];
+
+            }
+
             if($user_count < 1 || $book_count < 1){
                 if($user_count < 1){
                     echo "<script>alert(\"Username of student wrong !!\");</script>>";
@@ -97,9 +104,13 @@
                 }
     
             }
+            else if($status == 1){
+                echo "<script>alert(\"Book Not Available Now !!\");</script>";
+            }
             else{
                 $query = "insert into book_issue (book_id,user_name,issue_date,status) values ($bookid,'$uname','$issuedate',1)";
                 if(mysqli_query($con,$query)){
+                    $result = mysqli_query($con, "UPDATE book_details SET book_status='1' WHERE book_id=$bookid");
                     echo "<script>alert(\"Success\");</script>";
                 }
                 else{

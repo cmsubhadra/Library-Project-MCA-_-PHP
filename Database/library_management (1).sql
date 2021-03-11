@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2021 at 08:58 PM
+-- Generation Time: Mar 11, 2021 at 03:37 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -33,31 +33,19 @@ CREATE TABLE `book_details` (
   `book_name` varchar(20) NOT NULL,
   `book_author` varchar(20) NOT NULL,
   `book_edition` varchar(20) NOT NULL,
-  `book_publisher` varchar(20) NOT NULL
+  `book_publisher` varchar(20) NOT NULL,
+  `book_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `book_details`
 --
 
-INSERT INTO `book_details` (`book_id`, `book_name`, `book_author`, `book_edition`, `book_publisher`) VALUES
-('1', '0', '0', '1', '0'),
-('1', 'Chirakodinja kinavuk', 'jobin', '1', 'anganennum illa');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_approve`
---
-
-CREATE TABLE `user_approve` (
-  `name` varchar(20) NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `mobile` varchar(11) NOT NULL,
-  `user` varchar(20) NOT NULL,
-  `pwd` varchar(20) NOT NULL,
-  `pid` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `book_details` (`book_id`, `book_name`, `book_author`, `book_edition`, `book_publisher`, `book_status`) VALUES
+('1', 'Chirakodinja kinavuk', 'jobin', '1', 'anganennum illa', 0),
+('3', 'charithram', 'jobin', '3', 'vaiga', 0),
+('4', 'hacking', 'hacker', '45', 'auto generated', 0),
+('5', 'sathyam', 'njan', '34', 'kgf', 1);
 
 -- --------------------------------------------------------
 
@@ -77,7 +65,6 @@ CREATE TABLE `user_details` (
 --
 
 INSERT INTO `user_details` (`name`, `email`, `mobile`, `user`) VALUES
-('', '', '', ''),
 ('sdsd', 'jobinjofficial@gmail', 'er', 'admin3'),
 ('fgh', 'jobinjofficial@gmail', 'er', 'admin5'),
 ('jhj', 'jobinjofficial@gmail', '1111111', 'admin6'),
@@ -120,10 +107,10 @@ INSERT INTO `user_login` (`user_id`, `user_password`, `user_passid`, `user_athor
 --
 
 --
--- Indexes for table `user_approve`
+-- Indexes for table `book_details`
 --
-ALTER TABLE `user_approve`
-  ADD PRIMARY KEY (`user`);
+ALTER TABLE `book_details`
+  ADD PRIMARY KEY (`book_id`);
 
 --
 -- Indexes for table `user_details`

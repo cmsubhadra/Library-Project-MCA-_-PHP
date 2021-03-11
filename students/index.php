@@ -23,6 +23,7 @@
 		<h3 class="admin"> <?php echo $_SESSION['username']; ?>
 		</h3>
 		<a href="view_book.php" class="admin-items" target="content">Search Book</a>
+		<a href="book_transactions.php" class="admin-items" target="content">History</a>
 		<a href="logout.php" class="admin-items">Logout</a>
 	
 	</div>
