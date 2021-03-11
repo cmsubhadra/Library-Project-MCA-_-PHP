@@ -5,9 +5,21 @@
 	  header("location:../login.php");
   }
 ?>
+
 <html>
-<body>
-<img id="img1" src="images/student.jpg">
-</body>
+  <head>
+    <style>
+    body{
+      background: url(images/student.jpg);
+      background-position:center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: #464646;
+	  }
+    </style>
+  </head>
+  <body>
+  </body>
 </html>
 

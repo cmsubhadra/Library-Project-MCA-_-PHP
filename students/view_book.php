@@ -7,11 +7,24 @@ session_start();
     <link href="library/search.css" type="text/css" rel="stylesheet">
     <style>
     tr,td{
-        padding:1em;
+        padding:10px;
+    }
+    .odd{
+        background-color: rgba(132, 133, 127,.5);
+            ;
+        }
+    .even{
+        background-color:rgba(96, 97, 93,.5);
+        }
+    th{
+        background-color: rgba(0, 0, 0,.5);
+        color:white;
+        
     }
     </style>
 </head>
 <body>
+<div class="shadow">
 <div class="text-center search-div">
 <h5 class="search-here">Search here</h5>
     </div>
@@ -24,10 +37,17 @@ session_start();
     else{
         $query = "select * from book_details";
         $values = mysqli_query($con,$query);
-        echo '<table border="1" id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>ID</th><th>TITLE</th><th>AUTHOR NO</th><th>EDITION</th><th>PUBLISHER</th>';
+        echo '<table id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>ID</th><th>TITLE</th><th>AUTHOR NO</th><th>EDITION</th><th>PUBLISHER</th><th>AVAILABILITY</th>';
         if(mysqli_num_rows($values)){
+            $i = 1;
                 while($row=mysqli_fetch_assoc($values)){
-                    echo '<tr>';
+                    if($i % 2 != 0){
+                        $classes = "odd";
+                    }
+                    else{
+                        $classes = "even";
+                    }
+                    echo "<tr class=".$classes.">";
                         echo '<td>';
                             echo $row["book_id"];
                         echo '</td>';
@@ -43,7 +63,17 @@ session_start();
                         echo '<td>';
                             echo $row["book_publisher"];
                         echo '</td>';
+                        echo '<td>';
+                        if($row["book_status"] == 0){
+                            echo "<h4 style=\"color:green;\">Available</h4>";
+
+                        }
+                        else{
+                            echo "<h4 style=\"color:red;\">Not Available</h4>";
+                        }
+                        echo '</td>';
                     echo '</tr>';
+                    $i++;
                 }
         }
         else{
@@ -53,7 +83,7 @@ session_start();
 
 ?>
 <script src="library/search.js"></script>
-
+<div>
 </body>
 </html>
 
