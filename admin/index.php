@@ -35,7 +35,7 @@
 
 
 	<div class="contents">
-		<iframe name="content" class="contents">
+		<iframe name="content" class="contents" src="home.php">
 				
 		</iframe>
 	</div>
