@@ -7,11 +7,9 @@
 
 <html lang="en">
 <head>
-    <link href="library/search.css" type="text/css" rel="stylesheet">
+    <link href="library/table.css" type="text/css" rel="stylesheet">
     <style>
-    tr,td{
-        padding:1em;
-    }
+    
     </style>
 </head>
 <body>
@@ -28,7 +26,9 @@
         $values = mysqli_query($con,$query);
         echo '<table border="1" id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>Name</th><th>Mobile</th><th>Email</th><th>User name</th><th>Decision</th>';
         if(mysqli_num_rows($values)){
+           
                 while($row=mysqli_fetch_assoc($values)){
+                    
                     echo '<form action="#" method="POST"><tr>';
                         echo '<td>';
                             echo $row["name"];

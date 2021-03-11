@@ -23,6 +23,7 @@
 		<h3 class="admin"> <?php echo $_SESSION['username']; ?>
 		</h3>
 		<a href="view_book.php" class="admin-items" target="content">Search Book</a>
+		<a href="book_transactions.php" class="admin-items" target="content">History</a>
 		<a href="logout.php" class="admin-items">Logout</a>
 	
 	</div>
@@ -31,7 +32,7 @@
 
 
 	<div class="contents">
-		<iframe name="content" class="contents"></iframe>
+		<iframe name="content" class="contents" src="home_stud.php"></iframe>
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -10,7 +10,7 @@
   <head>
     <style>
     body{
-      background: url(images/student.jpg);
+      background: url(image/admin.jpg);
       background-position:center;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -22,4 +22,3 @@
   <body>
   </body>
 </html>
-

@@ -2,43 +2,68 @@
 
 
 .search-div{
-    animation: color-change1 3s infinite;
-  
-  }
-  @keyframes color-change1 {
-    0% { color: black;background-color: white; }
-    50% { color: white;background-color: black; }
-    100% { color: black;background-color: white; }
-  }
-  
-  
-  input[type=text] {
-    width: 130px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-  }
-  
-  /* When the input field gets focus, change its width to 100% */
-  input[type=text]:focus {
-    width: 100%;
-  }
-  .table-bar{
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 1em;
-      width: 90%;
-      border: 1px solid;
-     
-  }
-  tr,td{
+  animation: color-change1 3s infinite;
+
+}
+@keyframes color-change1 {
+  0% { color: black;background-color: white; }
+  50% { color: white;background-color: black; }
+  100% { color: black;background-color: white; }
+}
+
+
+input[type=text] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 100%;
+}
+.table-bar{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    width: 90%;
     border: 1px solid;
-  }
-  
-  .search-here{
-   margin: 0;
-  }
-  
-  #myTable th{
-    border:1px solid black;
-    padding:5px;
-  }
+   
+}
+tr,td{
+  border-left:2px solid white;
+  border-bottom:2px solid white;
+  padding-left: 20px;
+  padding-right: 20px;  
+}
+
+.search-here{
+ margin: 0;
+}
+
+#myTable th{
+  border-left:2px solid white;
+  border-bottom:2px solid white;
+  padding:5px;
+  padding-left: 20px;
+  padding-right: 20px;  
+}
+
+body{
+  background: url(images/bg.jpg);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:rgba(0,0,0,.5);
+
+}
+
+.shadow{
+background-color: rgba(255,255,255,.7);
+height:100%;
+}
+
+#myTable{
+width:90%;
+}

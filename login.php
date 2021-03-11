@@ -71,7 +71,7 @@
             }
             else{
                 echo '<script>alert("Authentication Failed Sorry !!");</script>';
-                //header("location:login.php?error=1");
+               
             }
         }
         ?>

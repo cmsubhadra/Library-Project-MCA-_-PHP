@@ -7,6 +7,7 @@
 
 <html lang="en">
 <head>
+<link href="library/table.css" type="text/css" rel="stylesheet">
     <style>
     tr,td{
         padding:1em;
