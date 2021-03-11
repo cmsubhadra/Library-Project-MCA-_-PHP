@@ -31,7 +31,9 @@
      
   }
   tr,td{
-    border: 1px solid;
+    border-left: 2px solid white;
+    padding-left: 20px;
+    padding-right: 20px;  
   }
   
   .search-here{
@@ -39,6 +41,8 @@
   }
   
   #myTable th{
-    border:1px solid black;
+    border-left: 2px solid white;
     padding:5px;
+    padding-left: 20px;
+    padding-right: 20px;  
   }

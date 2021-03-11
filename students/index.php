@@ -31,7 +31,7 @@
 
 
 	<div class="contents">
-		<iframe name="content" class="contents"></iframe>
+		<iframe name="content" class="contents" src="home_stud.php"></iframe>
 	</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
