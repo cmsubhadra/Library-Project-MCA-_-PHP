@@ -10,13 +10,16 @@ session_start();
         padding:10px;
     }
     .odd{
-            background-color: lightgrey;
+        background-color: rgba(132, 133, 127,.5);
+            ;
         }
     .even{
-            background-color: white;
+        background-color:rgba(96, 97, 93,.5);
         }
     th{
-        background-color:lightpink;
+        background-color: rgba(0, 0, 0,.5);
+        color:white;
+        
     }
     </style>
 </head>
