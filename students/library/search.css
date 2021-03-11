@@ -46,3 +46,18 @@
     padding-left: 20px;
     padding-right: 20px;  
   }
+
+  body{
+    background: url(../images/search_bg.png);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:rgba(0,0,0,.5);
+	
+}
+
+/*.shadow1{
+ background-color: rgba(0,0,0,.1);
+ height:100%;
+}*/

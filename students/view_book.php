@@ -21,6 +21,7 @@ session_start();
     </style>
 </head>
 <body>
+<div class="shadow">
 <div class="text-center search-div">
 <h5 class="search-here">Search here</h5>
     </div>
@@ -70,7 +71,7 @@ session_start();
 
 ?>
 <script src="library/search.js"></script>
-
+<div>
 </body>
 </html>
 
