@@ -48,32 +48,21 @@
     <form name="form" action="#" method="POST">
         <table>
             <tr>
-                <th colspan="2" style="text-align:center">ADD STUDENT</th>
+                <th colspan="2" style="text-align:center">ISSUE BOOK</th>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>User Name</th>
                 <td><input type="text" name="fname"> </td>
             </tr>
             <tr>
-                <th>Email</th>
+                <th>Book ID</th>
                 <td><input type="email" name="email"> </td>
             </tr>
             <tr>
-                <th>Mob NO </th>
+                <th>Issue Date </th>
                 <td><input type="tel" name="mob"> </td>
             </tr>
-            <tr>
-                <th>Username </th>
-                <td><input type="text" name="user"> </td>
-            </tr>
-            <tr>
-                <th>Password </th>
-                <td><input type="password" name="password"> </td>
-            </tr>
-            <tr>
-                <th>PassID </th>
-                <td><input type="password" name="passid"> </td>
-            </tr>
+            
             <tr class="center">
                 <th colspan="2"><input type="submit" value="submit" name="submit"></th>
             </tr>
