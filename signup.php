@@ -11,7 +11,7 @@
         background-color: white;
         margin-left: auto;
         margin-right: auto;
-        margin-top:1em;
+        margin-top:4em;
         padding:1em;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
     }
@@ -24,9 +24,7 @@
     }
     h2{
         text-align: center;
-        margin-top: 2em;
-        background-color:black;
-        color: white;
+        
     }
    body
     {
@@ -42,9 +40,12 @@
     }
 </style>
 <body>
-    <h2>ADD STUDENT</h2>
+   
     <form name="form" action="#" method="POST">
         <table>
+            <tr>
+               <th colspan="2"><h2>ADD STUDENT</h2></th>
+            </tr>
             <tr>
                 <th>Name</th>
                 <td><input type="text" name="fname"> </td>
