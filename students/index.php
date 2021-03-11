@@ -20,7 +20,7 @@
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<img src="library/images/admin_logo.jpg" class="admin-logo">
-		<h3 class="admin">
+		<h3 class="admin"> <?php echo $_SESSION['username']; ?>
 		</h3>
 		<a href="view_book.php" class="admin-items" target="content">Search Book</a>
 		<a href="logout.php" class="admin-items">Logout</a>
