@@ -1,5 +1,8 @@
 <?php
-session_start();
+  session_start();
+  if(!isset($_SESSION['username'])){
+	  header("location:../login.php");
+  }
 ?>
 <html lang="en">
 <head>
@@ -18,12 +21,6 @@ session_start();
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 		<img src="library/images/admin_logo.jpg" class="admin-logo">
 		<h3 class="admin">
-		<?php
-		if($_SESSION["name"]) {
-			echo $_SESSION["name"]; 
-		}
-		else echo "<h1>Please login first .</h1>";
-		?>
 		</h3>
 		<a href="view_book.php" class="admin-items" target="content">Search Book</a>
 		<a href="logout.php" class="admin-items">Logout</a>
