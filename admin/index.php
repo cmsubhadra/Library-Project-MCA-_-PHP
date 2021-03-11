@@ -28,6 +28,7 @@
 		<a href="view_student.php" class="admin-items" target="content">View Student</a>
 		<a href="view_book.php" class="admin-items" target="content">Search Book</a>
 		<a href="issue_book.php" class="admin-items" target="content">Issue Book</a>
+		<a href="return_book.php" class="admin-items" target="content">Return Book</a>
 		<a href="logout.php" class="admin-items">Logout</a>
 	
 	</div>
