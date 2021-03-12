@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2021 at 08:58 PM
+-- Generation Time: Mar 11, 2021 at 04:47 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -33,16 +33,43 @@ CREATE TABLE `book_details` (
   `book_name` varchar(20) NOT NULL,
   `book_author` varchar(20) NOT NULL,
   `book_edition` varchar(20) NOT NULL,
-  `book_publisher` varchar(20) NOT NULL
+  `book_publisher` varchar(20) NOT NULL,
+  `book_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `book_details`
 --
 
-INSERT INTO `book_details` (`book_id`, `book_name`, `book_author`, `book_edition`, `book_publisher`) VALUES
-('1', '0', '0', '1', '0'),
-('1', 'Chirakodinja kinavuk', 'jobin', '1', 'anganennum illa');
+INSERT INTO `book_details` (`book_id`, `book_name`, `book_author`, `book_edition`, `book_publisher`, `book_status`) VALUES
+('1', 'Chirakodinja kinavuk', 'jobin', '1', 'anganennum illa', 0),
+('3', 'charithram', 'jobin', '3', 'vaiga', 0),
+('4', 'hacking', 'hacker', '45', 'auto generated', 0),
+('5', 'sathyam', 'njan', '34', 'kgf', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `book_issue`
+--
+
+CREATE TABLE `book_issue` (
+  `book_id` int(11) NOT NULL,
+  `user_name` varchar(20) NOT NULL,
+  `issue_date` varchar(20) NOT NULL,
+  `return_date` varchar(20) NOT NULL,
+  `status` int(11) NOT NULL,
+  `no` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `book_issue`
+--
+
+INSERT INTO `book_issue` (`book_id`, `user_name`, `issue_date`, `return_date`, `status`, `no`) VALUES
+(1, 'hacker', '1/1/1', '2/2/2', 0, 10),
+(4, 'hacker', '2/2/2', '4/4/4', 0, 11),
+(1, 'hacker', '3/3/3', '5/5/5', 0, 12);
 
 -- --------------------------------------------------------
 
@@ -58,6 +85,13 @@ CREATE TABLE `user_approve` (
   `pwd` varchar(20) NOT NULL,
   `pid` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user_approve`
+--
+
+INSERT INTO `user_approve` (`name`, `email`, `mobile`, `user`, `pwd`, `pid`) VALUES
+('hnghjgh', 'jobinjofficial@gmail', '1111111111', 'dark', 'admin', '454');
 
 -- --------------------------------------------------------
 
@@ -77,7 +111,6 @@ CREATE TABLE `user_details` (
 --
 
 INSERT INTO `user_details` (`name`, `email`, `mobile`, `user`) VALUES
-('', '', '', ''),
 ('sdsd', 'jobinjofficial@gmail', 'er', 'admin3'),
 ('fgh', 'jobinjofficial@gmail', 'er', 'admin5'),
 ('jhj', 'jobinjofficial@gmail', '1111111', 'admin6'),
@@ -120,6 +153,18 @@ INSERT INTO `user_login` (`user_id`, `user_password`, `user_passid`, `user_athor
 --
 
 --
+-- Indexes for table `book_details`
+--
+ALTER TABLE `book_details`
+  ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `book_issue`
+--
+ALTER TABLE `book_issue`
+  ADD PRIMARY KEY (`no`);
+
+--
 -- Indexes for table `user_approve`
 --
 ALTER TABLE `user_approve`
@@ -136,6 +181,16 @@ ALTER TABLE `user_details`
 --
 ALTER TABLE `user_login`
   ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `book_issue`
+--
+ALTER TABLE `book_issue`
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

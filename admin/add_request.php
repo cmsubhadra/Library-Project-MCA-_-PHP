@@ -9,7 +9,10 @@
 <head>
     <link href="library/table.css" type="text/css" rel="stylesheet">
     <style>
-    
+    td
+      {
+       text-align:center;
+      }
     </style>
 </head>
 <body>
@@ -41,15 +44,15 @@
                         echo '</td>';
                         echo '<td>';
                         ?>
-                            <input name="user" required type="text" placeholder="page name" value="<?php echo $row['user']; ?>">
+                            <input style="border:none" readonly name="user" required type="text" placeholder="page name" value="<?php echo $row['user']; ?>">
                         <?php
                         echo '</td>';
                         echo '<td>';
-                            echo "<input type='submit' name='accept' value='Accept' style='background-color:green;color:white'> <input type='submit' name='reject' value='Reject' style='color:white;background-color:red;'>";
+                            echo "<input type='submit' name='accept' value='Accept' style='background-color:green;color:white;border:none'> <input type='submit' name='reject' value='Reject' style='color:white;background-color:red;border:none'>";
                         echo '</td>';
                     echo '</tr></form>';
                 }
-                echo '</table>';
+;                echo '</table>';
         }
         else{
                 echo "<script>alert('Nothing is active !');</script>";

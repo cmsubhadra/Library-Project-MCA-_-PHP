@@ -52,15 +52,15 @@
             </tr>
             <tr>
                 <th>User Name</th>
-                <td><input type="text" name="fname"> </td>
+                <td><input type="text" name="uname"> </td>
             </tr>
             <tr>
                 <th>Book ID</th>
-                <td><input type="email" name="email"> </td>
+                <td><input type="text" name="bookid"> </td>
             </tr>
             <tr>
                 <th>Issue Date </th>
-                <td><input type="tel" name="mob"> </td>
+                <td><input type="text" name="issuedate"> </td>
             </tr>
             
             <tr class="center">
@@ -75,26 +75,48 @@
     }
 
     if(isset($_POST['submit'])){
-        $name = $_POST['fname'];  
-        $email = $_POST['email'];  
-        $mobile = $_POST['mob'];  
-        $user = $_POST['user'];  
-        $password = $_POST['password'];
-        $passid = $_POST['passid'];
 
-            $query = "insert into user_details values('$name','$email','$mobile','$user')";
-            if(mysqli_query($con,$query)){
-                echo "success";
+        $uname = $_POST['uname'];  
+        $bookid = $_POST['bookid'];  
+        $issuedate = $_POST['issuedate'];  
+   
+            $book_check = "select * from book_details where book_id='$bookid'";
+            $book_result = mysqli_query($con,$book_check);
+            $book_count = mysqli_num_rows($book_result);
+
+            $user_check = "select * from user_details where user='$uname'";
+            $user_result = mysqli_query($con,$user_check);
+            $user_count = mysqli_num_rows($user_result);
+            
+
+            while($res = mysqli_fetch_array($book_result)){
+
+                $status= $res['book_status'];
+
+            }
+
+            if($user_count < 1 || $book_count < 1){
+                if($user_count < 1){
+                    echo "<script>alert(\"Username of student wrong !!\");</script>>";
+                }
+                if($book_count < 1){
+                    echo "<script>alert(\"Book ID wrong !!\");</script>";
+                }
+    
+            }
+            else if($status == 1){
+                echo "<script>alert(\"Book Not Available Now !!\");</script>";
             }
             else{
-                echo "error".$query.mysqli_error($con);
-            }
-            $query_acc = "insert into user_login values('$user','$password','$passid','1001')";
-            if(mysqli_query($con,$query_acc)){
-                echo "success";
-            }
-            else{
-                echo "error".$query.mysqli_error($con);
+                $query = "insert into book_issue (book_id,user_name,issue_date,status) values ($bookid,'$uname','$issuedate',1)";
+                if(mysqli_query($con,$query)){
+                    $result = mysqli_query($con, "UPDATE book_details SET book_status='1' WHERE book_id=$bookid");
+                    echo "<script>alert(\"Success\");</script>";
+                }
+                else{
+                    //echo "error".$query.mysqli_error($con);
+                    echo "<script>alert(\"Connection error !! contact  administrator !!\");</script>";
+                }
             }
     }
 ?>
