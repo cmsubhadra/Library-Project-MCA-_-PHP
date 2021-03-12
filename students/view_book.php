@@ -17,13 +17,20 @@ session_start();
         background-color:rgba(96, 97, 93,.5);
         }
     th{
-        background-color: rgba(0, 0, 0,.5);
+        background-color:rgba(0, 0, 0,.5);
         color:white;
         
     }
+    .main-head{
+  	//background:black;
+  	color:red;
+  	text-align:center;
+	font-family:Courier New;
+	font-size:50px;
+    }
     </style>
 </head>
-<body>
+<body><h2 class="main-head">BOOK DETAILS</h2>
 <div class="shadow">
 <div class="text-center search-div">
 <h5 class="search-here">Search here</h5>
