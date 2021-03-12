@@ -99,19 +99,19 @@ while($res = mysqli_fetch_array($result)){
         <table>
             <tr>
                 <td>Ref. No</td>
-                <td><input type="text" name="no" value="<?php echo $no;?>"></td>
+                <td><input readonly type="text" name="no" value="<?php echo $no;?>"></td>
             </tr>
             <tr>
                 <td>User Name</td>
-                <td><input type="text" name="name" value="<?php echo $name;?>"></td>
+                <td><input readonly type="text" name="name" value="<?php echo $name;?>"></td>
             </tr>
             <tr>
                 <td>Book ID</td>
-                <td><input type="text" name="bookid" value="<?php echo $bookid;?>"></td>
+                <td><input readonly type="text" name="bookid" value="<?php echo $bookid;?>"></td>
             </tr>
             <tr>
                 <td>Issue Date</td>
-                <td><input type="text" name="issue" value="<?php echo $issue_date;?>"></td>
+                <td><input readonly type="text" name="issue" value="<?php echo $issue_date;?>"></td>
             </tr>
             <tr>
                 <td>Return Date</td>
