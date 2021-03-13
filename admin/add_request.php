@@ -31,6 +31,12 @@
             text-transform:uppercase;
             border-bottom:2px solid red;
         }
+        .opt-sel-btn{
+            color:white;
+            border:none;
+            padding:5px;
+            border-radius:3px;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +73,7 @@
                         <?php
                         echo '</td>';
                         echo '<td>';
-                            echo "<input type='submit' name='accept' value='Accept' style='background-color:green;color:white;border:none'> <input type='submit' name='reject' value='Reject' style='color:white;background-color:red;border:none'>";
+                            echo "<input class=\"opt-sel-btn\" type='submit' name='accept' value='Accept' style='background-color:green;'> <input class=\"opt-sel-btn\" type='submit' name='reject' value='Reject' style='background-color:red;'>";
                         echo '</td>';
                     echo '</tr></form>';
                 }

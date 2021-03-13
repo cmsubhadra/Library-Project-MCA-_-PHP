@@ -47,10 +47,19 @@ $result = mysqli_query($con, "SELECT * FROM book_issue where status=1");
         .returnbutton
         {
             text-decoration:none;
-            background-color:#d47633;
-            border:2px;
+            /*backgroun-color:#d47633;
+            background-color:rgba(76, 199, 135,1);*/
+            background-color:orange;
+            border-radius:3px;
             color:black;
-            padding:5px;
+            padding:6px;
+            text-transform:uppercase;
+            font-size:10px;
+            font-weight:bold;
+
+        }
+        td,th{
+            text-align:center;
         }
     </style>
 </head>
