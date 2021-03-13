@@ -11,3 +11,24 @@ Accession number, title, authors, edition and publisher from a web page and stor
 the information in a database and to search for a book with the title specified by the
 user and to display the search results with proper headings.
         </p>
+	<html>
+	<body>
+	<form><br><br>
+	  type a text here : <input type="text" placeholder="type random"><br><br>
+	  <input type="submit"><br><br>
+	</form>
+	.
+	</body>
+	</html>
+
+
+$result = mysqli_query($con, "SELECT * FROM book_details ORDER BY book_id DESC LIMIT 1");
+
+while($res = mysqli_fetch_array($result)){
+    $bookid=$res['book_id'];
+}
+$bookid++;
+?>
+
+<th>ID</th>
+<td><input readonly type="text" name="book_id" value="<?php echo $bookid;?>"> </td>

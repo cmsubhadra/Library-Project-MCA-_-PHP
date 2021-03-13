@@ -31,7 +31,8 @@
      
   }
   tr,td{
-    border-left: 2px solid white;
+    border-left:2px solid white;
+    border-bottom:2px solid white;
     padding-left: 20px;
     padding-right: 20px;  
   }
@@ -41,8 +42,29 @@
   }
   
   #myTable th{
-    border-left: 2px solid white;
+    border-left:2px solid white;
+    border-bottom:2px solid white;
     padding:5px;
     padding-left: 20px;
     padding-right: 20px;  
   }
+
+  body{
+    background: url(../images/bg.jpg);
+ 
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color:rgba(0,0,0,.5);
+	
+}
+
+.shadow{
+ background-color: rgba(255,255,255,.7);
+ height:100%;
+}
+
+#myTable{
+  width:90%;
+}
