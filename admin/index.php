@@ -1,6 +1,10 @@
 <?php
-session_start();
+  session_start();
+  if(!isset($_SESSION['username'])){
+	  header("location:../login.php");
+  }
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,6 +27,9 @@ session_start();
 		<a href="add_request.php" class="admin-items" target="content">Approve Request</a>
 		<a href="view_student.php" class="admin-items" target="content">View Student</a>
 		<a href="view_book.php" class="admin-items" target="content">Search Book</a>
+		<a href="issue_book.php" class="admin-items" target="content">Issue Book</a>
+		<a href="return_book.php" class="admin-items" target="content">Return Book</a>
+		<a href="book_transactions.php" class="admin-items" target="content">History</a>
 		<a href="logout.php" class="admin-items">Logout</a>
 	
 	</div>
@@ -31,7 +38,7 @@ session_start();
 
 
 	<div class="contents">
-		<iframe name="content" class="contents">
+		<iframe name="content" class="contents" src="home.php">
 				
 		</iframe>
 	</div>

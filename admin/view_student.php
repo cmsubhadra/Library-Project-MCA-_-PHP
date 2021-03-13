@@ -1,8 +1,13 @@
 <?php
-session_start();
+  session_start();
+  if(!isset($_SESSION['username'])){
+	  header("location:../login.php");
+  }
 ?>
+
 <html lang="en">
 <head>
+<link href="library/table.css" type="text/css" rel="stylesheet">
     <style>
     tr,td{
         padding:1em;

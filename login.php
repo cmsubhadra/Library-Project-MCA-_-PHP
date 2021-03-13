@@ -55,7 +55,7 @@
 
             if($count>0){
                 $_SESSION["id"] = $login_rows[2];
-                $_SESSION["name"] = $login_rows[0];
+                $_SESSION["username"] = $login_rows[0];
                 if($login_rows[3]=="0110")
                 {
                     if(isset($_SESSION["id"])) {
@@ -71,7 +71,7 @@
             }
             else{
                 echo '<script>alert("Authentication Failed Sorry !!");</script>';
-                //header("location:login.php?error=1");
+               
             }
         }
         ?>

@@ -1,13 +1,18 @@
 <?php
-session_start();
+  session_start();
+  if(!isset($_SESSION['username'])){
+	  header("location:../login.php");
+  }
 ?>
+
 <html lang="en">
 <head>
-    <link href="library/search.css" type="text/css" rel="stylesheet">
+    <link href="library/table.css" type="text/css" rel="stylesheet">
     <style>
-    tr,td{
-        padding:1em;
-    }
+    td
+      {
+       text-align:center;
+      }
     </style>
 </head>
 <body>
@@ -24,7 +29,9 @@ session_start();
         $values = mysqli_query($con,$query);
         echo '<table border="1" id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>Name</th><th>Mobile</th><th>Email</th><th>User name</th><th>Decision</th>';
         if(mysqli_num_rows($values)){
+           
                 while($row=mysqli_fetch_assoc($values)){
+                    
                     echo '<form action="#" method="POST"><tr>';
                         echo '<td>';
                             echo $row["name"];
@@ -37,15 +44,15 @@ session_start();
                         echo '</td>';
                         echo '<td>';
                         ?>
-                            <input name="user" required type="text" placeholder="page name" value="<?php echo $row['user']; ?>">
+                            <input style="border:none" readonly name="user" required type="text" placeholder="page name" value="<?php echo $row['user']; ?>">
                         <?php
                         echo '</td>';
                         echo '<td>';
-                            echo "<input type='submit' name='accept' value='Accept' style='background-color:green;color:white'> <input type='submit' name='reject' value='Reject' style='color:white;background-color:red;'>";
+                            echo "<input type='submit' name='accept' value='Accept' style='background-color:green;color:white;border:none'> <input type='submit' name='reject' value='Reject' style='color:white;background-color:red;border:none'>";
                         echo '</td>';
                     echo '</tr></form>';
                 }
-                echo '</table>';
+;                echo '</table>';
         }
         else{
                 echo "<script>alert('Nothing is active !');</script>";

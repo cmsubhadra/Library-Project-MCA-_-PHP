@@ -11,7 +11,7 @@
         background-color: white;
         margin-left: auto;
         margin-right: auto;
-        margin-top:1em;
+        margin-top:4em;
         padding:1em;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
     }
@@ -22,17 +22,27 @@
     .center th{
         text-align: center;
     }
-    h2{
-        text-align: center;
-        margin-top: 2em;
-        background-color:black;
-        color: white;
+
+   body
+    {
+    height: 100%;
+    width:100%;
+    background: url(images/bg.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+    
     }
 </style>
 <body>
-    <h2>ADD STUDENT</h2>
+   
     <form name="form" action="#" method="POST">
         <table>
+            <tr>
+               <th colspan="2" style="text-align:center;color:red">SIGN UP</th>
+            </tr>
             <tr>
                 <th>Name</th>
                 <td><input type="text" name="fname"> </td>
