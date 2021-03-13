@@ -30,11 +30,18 @@ $result = mysqli_query($con, "SELECT * FROM book_issue where user_name='$get_use
         table{
             margin-top:3em;
         }
+        .main-head{
+  	    color:#00FFFF;
+	    text-shadow:0 0 5px #000000, 0 0 5px #000000;
+  	    text-align:center;
+	    font-family:Courier New;
+	    font-size:40px;
+        }
     </style>
 </head>
  
 
-<body>
+<body><h2 class="main-head">Book Transactions</h2>
     <table>
         <tr bgcolor='lightpink'>
             <td>Ref. NO</td>
