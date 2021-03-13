@@ -56,6 +56,14 @@
             text-transform:uppercase;
             border-bottom:2px solid red;
         }
+        .sb-btn{
+            background-color:green;
+            border:none;
+            padding:5px;
+            border-radius:3px;
+            color:white;
+            text-transform:uppercase;
+        }
 </style>
 <body>
     <h2 class="main-head"><b class="b-head">Add student diectly</b></h2>
@@ -89,7 +97,7 @@
                 <td><input type="password" name="passid"> </td>
             </tr>
             <tr class="center">
-                <th colspan="2"><input type="submit" value="submit" name="submit"></th>
+                <th colspan="2"><input class="sb-btn" type="submit" value="submit" name="submit"></th>
             </tr>
         </table>
     </form>
