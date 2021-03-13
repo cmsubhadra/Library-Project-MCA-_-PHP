@@ -13,9 +13,28 @@
       {
        text-align:center;
       }
+      .main-head{
+  	    /*color:#00FFFF;
+	    text-shadow:0 0 5px #000000, 0 0 5px #000000;
+        font-family:Courier New;*/
+  	    text-align:center;
+        font-family:Courier New;
+        margin-top:1em;
+	    
+	    font-size:30px;
+        }
+        .b-head{
+            background:rgba(255,255,255,.5);
+            color:black;
+            padding:3px;
+            border-radius:15px;
+            text-transform:uppercase;
+            border-bottom:2px solid red;
+        }
     </style>
 </head>
 <body>
+<h2 class="main-head"><b class="b-head">Approve user request for create account </b></h2>
 </body>
 </html>
 

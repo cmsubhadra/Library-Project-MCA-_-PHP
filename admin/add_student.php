@@ -28,12 +28,7 @@
     .center th{
         text-align: center;
     }
-    h2{
-        text-align: center;
-        margin-top: 2em;
-        background-color:black;
-        color: white;
-    }
+
 
     body{
     background: url(../images/bg.jpg);
@@ -43,8 +38,27 @@
     background-size: cover;
     background-color: #464646;
     }
+    .main-head{
+  	    /*color:#00FFFF;
+	    text-shadow:0 0 5px #000000, 0 0 5px #000000;
+        font-family:Courier New;*/
+  	    text-align:center;
+        font-family:Courier New;
+        margin-top:1em;
+	    
+	    font-size:30px;
+        }
+        .b-head{
+            background:rgba(255,255,255,.5);
+            color:black;
+            padding:3px;
+            border-radius:15px;
+            text-transform:uppercase;
+            border-bottom:2px solid red;
+        }
 </style>
 <body>
+    <h2 class="main-head"><b class="b-head">Add student diectly</b></h2>
     <form name="form" action="#" method="POST">
         <table>
             <tr>
