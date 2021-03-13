@@ -23,10 +23,10 @@ session_start();
     }
     .main-head{
   	//background:black;
-  	color:red;
+  	color:rgb(62, 62, 64);
   	text-align:center;
 	font-family:Courier New;
-	font-size:50px;
+	font-size:40px;
     }
     </style>
 </head>
