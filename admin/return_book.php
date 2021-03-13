@@ -44,6 +44,14 @@ $result = mysqli_query($con, "SELECT * FROM book_issue where status=1");
             text-transform:uppercase;
             border-bottom:2px solid red;
         }
+        .returnbutton
+        {
+            text-decoration:none;
+            background-color:#d47633;
+            border:2px;
+            color:black;
+            padding:5px;
+        }
     </style>
 </head>
  
@@ -74,7 +82,7 @@ $result = mysqli_query($con, "SELECT * FROM book_issue where status=1");
             echo "<td>".$res['book_id']."</td>";    
             echo "<td>".$res['issue_date']."</td>";
             echo "<td>".$res['return_date']."</td>"; 
-            echo "<td><a href=\"return_form.php?id=$res[no]\">Edit</a>";        
+            echo "<td><a class=\"returnbutton\" href=\"return_form.php?id=$res[no]\">Return</a>";        
             $i++;
         }
         ?>
