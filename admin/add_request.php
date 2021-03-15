@@ -37,6 +37,19 @@
             padding:5px;
             border-radius:3px;
         }
+        .div-box{
+            padding:10px;
+            background:white;
+            text-align:center;
+            width:80%;
+            margin:auto;
+        }
+        #myTable tr{
+            border-bottom:1px solid orange;
+        }
+        #myTable td{
+            padding-top:30px;
+        }
     </style>
 </head>
 <body>
@@ -50,9 +63,10 @@
         echo "Connection error !";
     }
     else{
+        echo "<div class=\"div-box\">";
         $query = "select * from user_approve";
         $values = mysqli_query($con,$query);
-        echo '<table border="1" id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>Name</th><th>Mobile</th><th>Email</th><th>User name</th><th>Decision</th>';
+        echo '<table id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>Name</th><th>Mobile</th><th>Email</th><th>User name</th><th>Decision</th>';
         if(mysqli_num_rows($values)){
            
                 while($row=mysqli_fetch_assoc($values)){
@@ -76,8 +90,9 @@
                             echo "<input class=\"opt-sel-btn\" type='submit' name='accept' value='Accept' style='background-color:green;'> <input class=\"opt-sel-btn\" type='submit' name='reject' value='Reject' style='background-color:red;'>";
                         echo '</td>';
                     echo '</tr></form>';
-                }
-;                echo '</table>';
+                };        
+                        echo '</table>';
+                        echo "</div>";
         }
         else{
                 echo "<script>alert('Nothing is active !');</script>";
