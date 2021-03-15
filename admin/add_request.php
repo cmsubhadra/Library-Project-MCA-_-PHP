@@ -45,7 +45,7 @@
             margin:auto;
         }
         #myTable tr{
-            border-bottom:1px solid orange;
+            border-bottom:1px solid rgb(199, 116, 8);
         }
         #myTable td{
             padding-top:30px;

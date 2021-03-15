@@ -30,6 +30,20 @@
             text-transform:uppercase;
             border-bottom:2px solid red;
         }
+        .div-box{
+            padding:10px;
+            background:white;
+            text-align:center;
+            width:80%;
+            margin:auto;
+        }
+        #main-tb tr{
+            border-bottom:1px solid rgb(199, 116, 8);
+            text-align:center;
+        }
+        #main-tb td{
+            padding-top:30px;
+        }
     </style>
 </head>
 <body>
@@ -43,9 +57,10 @@
         echo "Connection error !";
     }
     else{
+        echo "<div class=\"div-box\">";
         $query = "select * from user_details";
         $values = mysqli_query($con,$query);
-        echo '<table border="1" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>Name</th><th>Email</th><th>Mob NO</th><th>User Name</th>';
+        echo '<table id="main-tb" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>Name</th><th>Email</th><th>Mob NO</th><th>User Name</th>';
         if(mysqli_num_rows($values)){
                 while($row=mysqli_fetch_assoc($values)){
                     echo '<tr>';
@@ -63,6 +78,9 @@
                         echo '</td>';
                     echo '</tr>';
                 }
+                
+        echo "</table>";
+        echo "</div>";
         }
         else{
                 echo "error".$query.mysqli_error($con);
