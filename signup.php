@@ -14,6 +14,7 @@
         margin-top:4em;
         padding:1em;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+        border-radius:15px;
     }
     tr,td,th{
         padding:1em;
