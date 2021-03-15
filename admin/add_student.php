@@ -20,6 +20,7 @@
         margin-top:4em;
         padding:1em;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+        border-radius:15px;
     }
     tr,td,th{
         padding:1em;
@@ -46,12 +47,14 @@
         font-family:Courier New;
         margin-top:1em;
 	    
-	    font-size:30px;
+	    font-size:20px;
         }
         .b-head{
-            background:rgba(255,255,255,.5);
+            background:rgba(255,255,255,.5); 
             color:black;
             padding:3px;
+            padding-left:10px;
+            padding-right:10px;
             border-radius:15px;
             text-transform:uppercase;
             border-bottom:2px solid red;
@@ -66,11 +69,10 @@
         }
 </style>
 <body>
-    <h2 class="main-head"><b class="b-head">Add student diectly</b></h2>
     <form name="form" action="#" method="POST">
         <table>
             <tr>
-                <th colspan="2" style="text-align:center">ADD STUDENT</th>
+                <th colspan="2" style="text-align:center"><h2 class="main-head"><b class="b-head">Add student directly</b></h2></th>
             </tr>
             <tr>
                 <th>Name</th>
