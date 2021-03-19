@@ -31,23 +31,40 @@
             border-bottom:2px solid red;
         }
         .div-box{
-            padding:10px;
-            background:white;
+            padding:5px;
+            background:rgba(255,255,255,.5);
             text-align:center;
             width:80%;
             margin:auto;
+            border-radius:10px;
+            
         }
         #main-tb tr{
-            border-bottom:1px solid rgb(199, 116, 8);
+           /* border-bottom:1px solid rgb(199, 116, 8);*/
             text-align:center;
         }
-        #main-tb td{
+        #main-tb th{
+            color:red;
+            text-transform: uppercase;
+            font-family: "Lucida Console", "Courier New", monospace;
+            font-weight:normal;
+            
+            
+        }
+        th,tr,td{
+           /* border:1px solid rgb(199, 116, 8);*/
+            border:1px solid white;
+            background-color:rgba(0,0,0,.7);
+            color:white;
             padding-top:30px;
+        }
+        table{
+            background:none;
         }
     </style>
 </head>
 <body>
-    <h2 class="main-head"><b class="b-head">Students registered</b></h2>
+    
 </body>
 </html>
 
@@ -58,6 +75,7 @@
     }
     else{
         echo "<div class=\"div-box\">";
+        echo "<h2 class=\"main-head\"><b class=\"b-head\">Students registered</b></h2>";
         $query = "select * from user_details";
         $values = mysqli_query($con,$query);
         echo '<table id="main-tb" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>Name</th><th>Email</th><th>Mob NO</th><th>User Name</th>';
@@ -79,7 +97,7 @@
                     echo '</tr>';
                 }
                 
-        echo "</table>";
+        echo "</table><br><br>";
         echo "</div>";
         }
         else{
