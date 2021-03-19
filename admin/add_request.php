@@ -85,7 +85,7 @@
                         echo '</td>';
                         echo '<td>';
                         ?>
-                            <input style="border:none" readonly name="user" required type="text" placeholder="page name" value="<?php echo $row['user']; ?>">
+                            <input style="border:none;text-align:center" readonly name="user" required type="text" placeholder="page name" value="<?php echo $row['user']; ?>">
                         <?php
                         echo '</td>';
                         echo '<td>';
@@ -139,6 +139,7 @@
         mysqli_query($con,$select_query);
 
         echo "<script>alert('added succesfully .')</script>";
+        header("location:add_request.php");
 
         
     } 
@@ -147,7 +148,8 @@
         $select_query = "delete  from user_approve where user='$user'";
         mysqli_query($con,$select_query);
         echo "<script>alert('rejected succesfully .')</script>"; 
-        echo "<script>location.reload();</script>";
+        header("location:add_request.php");
+        //echo "<script>location.reload();</script>";
     } 
 
   
