@@ -29,7 +29,15 @@
     .center th{
         text-align: center;
     }
-
+    table input{
+        border-radius:15px;
+        border:1px solid black;
+    }
+    input:focus {
+        border-radius:15px;
+        border:1px solid red;
+        outline:none;
+    }
 
     body{
     background: url(../images/bg.jpg);

@@ -9,6 +9,7 @@
 <head>
     <link href="library/table.css" type="text/css" rel="stylesheet">
     <style>
+
     td
       {
        text-align:center;
