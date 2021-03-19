@@ -40,7 +40,7 @@
         }
         .div-box{
             padding:10px;
-            background:white;
+            background:rgba(255,255,255,1);
             text-align:center;
             width:80%;
             margin:auto;
@@ -50,6 +50,7 @@
         }
         #myTable td{
             padding-top:30px;
+            text-align:center;
         }
     </style>
 </head>
@@ -92,7 +93,7 @@
                         echo '</td>';
                     echo '</tr></form>';
                 };        
-                        echo '</table>';
+                        echo '</table><br><br>';
                         echo "</div>";
         }
         else{
