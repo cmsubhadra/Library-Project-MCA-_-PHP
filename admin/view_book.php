@@ -1,4 +1,4 @@
-<?php
+ <?php
   session_start();
   if(!isset($_SESSION['username'])){
 	  header("location:../login.php");
@@ -24,9 +24,16 @@
         color:white;
         
     }
+    .main-head{
+  	//background:black;
+  	color:rgb(62, 62, 64);
+  	text-align:center;
+	font-family:Courier New;
+	font-size:40px;
+    }
     </style>
 </head>
-<body>
+<body><h2 class="main-head">BOOK DETAILS</h2>
 <div class="shadow">
 <div class="text-center search-div">
 <h5 class="search-here">Search here</h5>
