@@ -127,3 +127,38 @@ body{
 	
 }
 */
+
+/*...........................button................................................................*/
+
+#nav-bar-btn {
+  display: block; /* Hidden by default */
+  position:fixed; /* Fixed/sticky position */
+ /*  bottom: 20px; Place the button at the bottom of the page */
+ /* right: 30px;  Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  top: 20px;
+  left:20px;
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  /*background-color: black;  Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  /* padding: 15px;  Some padding */
+  /*padding-left:5px;
+  padding-right:5px;
+  padding-top:8px;
+  padding-bottom:8px;*/
+  border-radius: 50%;  /*Rounded corners */
+  font-size: 18px; /* Increase font size */
+  line-height: .5;
+  animation: mymove 5s infinite;
+}
+
+#nav-bar-btn:hover {
+  color: red; /* Add a dark-grey background on hover */
+}
+
+@keyframes mymove {
+  from {color:white;}
+  to {color: gray;}
+}
