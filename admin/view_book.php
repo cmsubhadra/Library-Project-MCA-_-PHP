@@ -47,7 +47,8 @@
     else{
         $query = "select * from book_details";
         $values = mysqli_query($con,$query);
-        echo '<table id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>ID</th><th>TITLE</th><th>AUTHOR NO</th><th>EDITION</th><th>PUBLISHER</th><th>AVAILABILITY</th>';
+        echo '<table id="myTable" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>ID</th><th>TITLE</th><th>AUTHOR NO</th><th>EDITION</th><th>PUBLISHER</th>
+		<th>AVAILABILITY</th><th>DELETE</th>';
         if(mysqli_num_rows($values)){
             $i = 1;
                 while($row=mysqli_fetch_assoc($values)){
@@ -82,6 +83,12 @@
                             echo "<h4 style=\"color:red;\">Not Available</h4>";
                         }
                         echo '</td>';
+						
+						echo '<td>';
+                            echo '<a href=\"delete_book.php?id=$row[book_id]\"> Delete Book</a>';
+							
+                        echo '</td>';
+                        
                     echo '</tr>';
                     $i++;
                 }
