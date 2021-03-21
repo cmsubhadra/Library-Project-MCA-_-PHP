@@ -9,9 +9,7 @@
 <head>
 <link href="library/table.css" type="text/css" rel="stylesheet">
     <style>
-    tr,td{
-        padding:1em;
-    }
+
     .main-head{
   	    /*color:#00FFFF;
 	    text-shadow:0 0 5px #000000, 0 0 5px #000000;
@@ -32,7 +30,7 @@
         }
         .div-box{
             padding:5px;
-            background:rgba(255,255,255,.5);
+            background:rgba(255,255,255,0);
             text-align:center;
             width:80%;
             margin:auto;
@@ -48,18 +46,21 @@
             text-transform: uppercase;
             font-family: "Lucida Console", "Courier New", monospace;
             font-weight:normal;
-            
-            
         }
         th,tr,td{
            /* border:1px solid rgb(199, 116, 8);*/
-            border:1px solid white;
-            background-color:rgba(0,0,0,.7);
-            color:white;
-            padding-top:30px;
+           
+            background-color:rgba(255,255,255,1);
+            color:black;
+            padding:15px;
+           
         }
         table{
             background:none;
+        }
+        td:hover{
+            color:white;
+            background-color:gray;
         }
     </style>
 </head>
@@ -78,7 +79,7 @@
         echo "<h2 class=\"main-head\"><b class=\"b-head\">Students registered</b></h2>";
         $query = "select * from user_details";
         $values = mysqli_query($con,$query);
-        echo '<table id="main-tb" style="margin-left:auto;margin-right:auto;margin-top:3em;border-collapse:collapse;"><th>Name</th><th>Email</th><th>Mob NO</th><th>User Name</th>';
+        echo '<table id="main-tb" style="margin-left:auto;margin-right:auto;margin-top:3em;"><th>Name</th><th>Email</th><th>Mob NO</th><th>User Name</th>';
         if(mysqli_num_rows($values)){
                 while($row=mysqli_fetch_assoc($values)){
                     echo '<tr>';
