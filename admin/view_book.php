@@ -11,6 +11,7 @@
     <style>
     tr,td{
         padding:10px;
+        text-align:center;
     }
     .odd{
         background-color: rgba(132, 133, 127,.5);
@@ -22,14 +23,26 @@
     th{
         background-color: rgba(0, 0, 0,.5);
         color:white;
+        text-align:center;
         
     }
     .main-head{
-  	//background:black;
+  	/*background:black;*/
   	color:rgb(62, 62, 64);
   	text-align:center;
 	font-family:Courier New;
 	font-size:40px;
+    }
+    .delete-btn{
+    text-decoration: none;
+    background-color: gray;
+    padding: 5px;
+    color:black;
+    border-radius:5px;
+    }
+    .delete-btn:hover{
+        background-color:red;
+        color:white;
     }
     </style>
 </head>
@@ -85,7 +98,7 @@
                         echo '</td>';
 						
 						echo '<td>';
-                            echo "<a href=\"delete_book.php?id=$row[book_id]\"> Delete Book </a>";
+                            echo "<a class=\"delete-btn\" href=\"delete_book.php?id=$row[book_id]\"> Delete </a>";
 							
                         echo '</td>';
                         
