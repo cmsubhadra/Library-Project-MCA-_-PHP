@@ -151,14 +151,15 @@ body{
   border-radius: 50%;  /*Rounded corners */
   font-size: 18px; /* Increase font size */
   line-height: .5;
-  animation: mymove 5s infinite;
+  animation: mymove 2s infinite;
 }
 
 #nav-bar-btn:hover {
-  color: red; /* Add a dark-grey background on hover */
+  color: black; /* Add a dark-grey background on hover */
+  animation:none;
 }
 
 @keyframes mymove {
-  from {color:white;}
-  to {color: gray;}
+  
+  50% {color: black;}
 }
