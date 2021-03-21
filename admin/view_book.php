@@ -85,7 +85,7 @@
                         echo '</td>';
 						
 						echo '<td>';
-                            echo '<a href=\"delete_book.php?id=$row[book_id]\"> Delete Book</a>';
+                            echo "<a href=\"delete_book.php?id=$row[book_id]\"> Delete Book </a>";
 							
                         echo '</td>';
                         
