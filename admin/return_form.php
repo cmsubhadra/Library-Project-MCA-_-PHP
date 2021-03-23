@@ -75,12 +75,7 @@ while($res = mysqli_fetch_array($result)){
     .center th{
         text-align: center;
     }
-    h2{
-        text-align: center;
-        margin-top: 2em;
-        background-color:black;
-        color: white;
-    }
+
 
     body{
     background: url(../images/bg.jpg);

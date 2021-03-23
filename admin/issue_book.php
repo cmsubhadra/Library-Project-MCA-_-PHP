@@ -20,6 +20,7 @@
         margin-top:4em;
         padding:1em;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+        border-radius:15px;
     }
     tr,td,th{
         padding:1em;
@@ -46,8 +47,9 @@
         font-family:Courier New;
         margin-top:1em;
 	    
-	    font-size:30px;
+	    font-size:20px;
         }
+        
         .b-head{
             background:rgba(255,255,255,.5);
             color:black;
@@ -56,14 +58,32 @@
             text-transform:uppercase;
             border-bottom:2px solid red;
         }
+        .sb-btn{
+            background-color:green;
+            border:none;
+            padding:5px;
+            border-radius:3px;
+            color:white;
+            text-transform:uppercase;
+        }
+        table input{
+        border-radius:15px;
+        border:1px solid black;
+        }
+        input:focus {
+        border-radius:15px;
+        border:1px solid red;
+        outline:none;
+    }
 </style>
 <body>
-    <h2 class="main-head"><b class="b-head">Issue book </b></h2>
+ 
     <form name="form" action="#" method="POST">
         <table>
-            <tr>
-                <th colspan="2" style="text-align:center">ISSUE BOOK</th>
+             <tr>
+             <th colspan="2" style="text-align:center"><h2 class="main-head"><b class="b-head">Issue Book</b></h2></th>
             </tr>
+         
             <tr>
                 <th>User Name</th>
                 <td><input type="text" name="uname"> </td>
@@ -78,7 +98,7 @@
             </tr>
             
             <tr class="center">
-                <th colspan="2"><input type="submit" value="submit" name="submit"></th>
+                <th colspan="2"><input class="sb-btn" type="submit" value="submit" name="submit"></th>
             </tr>
         </table>
     </form>

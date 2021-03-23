@@ -20,7 +20,18 @@
         margin-top:4em;
         padding:1em;
         box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+        border-radius:15px;
     }
+    table input{
+        border-radius:15px;
+        border:1px solid black;
+    }
+    input:focus {
+        border-radius:15px;
+        border:1px solid red;
+        outline:none;
+    }
+
     tr,td,th{
         padding:1em;
         text-align: left;
@@ -46,19 +57,28 @@
         font-family:Courier New;
         margin-top:1em;
 	    
-	    font-size:30px;
-        }
+	    font-size:20px;
+    }
         .b-head{
             background:rgba(255,255,255,.5);
             color:black;
             padding:3px;
+            padding-left:10px;
+            padding-right:10px;
             border-radius:15px;
             text-transform:uppercase;
             border-bottom:2px solid red;
         }
+        .sb-btn{
+            background-color:green;
+            border:none;
+            padding:5px;
+            border-radius:3px;
+            color:white;
+            text-transform:uppercase;
+        }
 </style>
 <body>
-<h2 class="main-head"><b class="b-head">ADD new book</b></h2>
 <?php
      $con = Mysqli_Connect("localhost","root","","library_management");
      if(!$con){
@@ -91,7 +111,9 @@
     <form name="form" action="#" method="POST">
         <table>
             <tr>
-                <th colspan="2" style="text-align:center">ADD BOOK DETAILS</th>
+                <th colspan="2" style="text-align:center">
+                <h2 class="main-head"><b class="b-head">ADD new book</b></h2>
+                </th>
             </tr>
             <tr>
 			
@@ -116,7 +138,7 @@
                 <td><input type="text" name="book_publisher"> </td>
             </tr>
             <tr class="center">
-                <th colspan="2"><input type="submit" value="submit" name="submit"></th>
+                <th colspan="2"><input class="sb-btn" type="submit" value="ADD book" name="submit"></th>
             </tr>
         </table>
     </form>
